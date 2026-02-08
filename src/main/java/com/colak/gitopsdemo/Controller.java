@@ -15,7 +15,7 @@ public class Controller {
                 "<h1>GitOps Demo Başarıyla Çalışıyor!</h1>" +
                 "<p>Bu yanıt şu Pod'dan geliyor: <strong>" + podName + "</strong></p>" +
                 "<div style='margin-top:20px; padding:10px; border:2px solid #2ecc71; display:inline-block;'>" +
-                "Versiyon: <b>v1.0.0</b></div>" +
+                "Versiyon: <b>v2.0.0</b></div>" +
                 "</body></html>";
     }
 }
