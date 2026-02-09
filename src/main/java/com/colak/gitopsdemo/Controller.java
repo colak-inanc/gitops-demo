@@ -18,4 +18,10 @@ public class Controller {
                 "Versiyon: <b>v2.0.0</b></div>" +
                 "</body></html>";
     }
+
+    @GetMapping("/c4n")
+    public String c4n() throws UnknownHostException {
+        String podName = InetAddress.getLocalHost().getHostName();
+        return "<html> Reis hoşgeldin! çalışan pod: <strong>" + podName + "</strong></html>";
+    }
 }
