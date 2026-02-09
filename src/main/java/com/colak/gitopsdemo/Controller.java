@@ -12,7 +12,7 @@ public class Controller {
     public String index() throws UnknownHostException {
         String podName = InetAddress.getLocalHost().getHostName();
         return "<html><body style='text-align:center; font-family:sans-serif; background-color: #f4f4f4;'>" +
-                "<h1>GitOps Demo Başarıyla Çalışıyor!</h1>" +
+                "<h1>Repo Server Sorunu Çözüldü! Sistem Canavar Gibi Çalışıyor!</h1>" +
                 "<p>Bu yanıt şu Pod'dan geliyor: <strong>" + podName + "</strong></p>" +
                 "<div style='margin-top:20px; padding:10px; border:2px solid #2ecc71; display:inline-block;'>" +
                 "Versiyon: <b>v2.0.0</b></div>" +
