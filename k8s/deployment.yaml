@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: gitops-demo
-          image: colakk35/gitops-demo:246f9ecbd9811edc234eeb1f2ef96596392aaf93
+          image: colakk35/gitops-demo:9420d615faaf82da8601937443dea2ef2ee208d8
           ports:
             - containerPort: 8080
