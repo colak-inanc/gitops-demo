@@ -18,10 +18,14 @@ public class UserService implements UserDetailsService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void saveUser(User user) {
+    public boolean saveUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            return false;
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("USER");
         userRepository.save(user);
+        return true;
     }
 
     @Override

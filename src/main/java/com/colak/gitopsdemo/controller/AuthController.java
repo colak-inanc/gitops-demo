@@ -2,11 +2,13 @@ package com.colak.gitopsdemo.controller;
 
 import com.colak.gitopsdemo.model.User;
 import com.colak.gitopsdemo.service.UserService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class AuthController {
     private final UserService userService;
 
@@ -16,6 +18,7 @@ public class AuthController {
 
     @GetMapping("/login")
     public String loginPage() {
+        System.out.println("Login page requested");
         return "login";
     }
 
@@ -26,8 +29,11 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute User user) {
-        userService.saveUser(user);
+    public String registerUser(@ModelAttribute User user, Model model) {
+        if (!userService.saveUser(user)) {
+            model.addAttribute("error", "Kullanıcı adı zaten kullanımda!");
+            return "register";
+        }
         return "redirect:/login?success";
     }
 }
